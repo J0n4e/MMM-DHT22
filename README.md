@@ -41,13 +41,15 @@ modules: [
 
 
 Configuration Options
-gpioPin: GPIO pin number for the DHT22 sensor.
-fontSize: Font size for module text.
-fontFamily: Font family for module text.
-showThermometerIcon: Set to true to show the thermometer icon.
-showDropletIcon: Set to true to show the droplet icon.
-showTemperatureText: Set to true to show the temperature text.
-showHumidityText: Set to true to show the humidity text.
-headerText: The header text to be displayed above the values.
-updateInterval: Update interval in seconds for fetching sensor data.
+* gpioPin: GPIO pin number for the DHT22 sensor.
+* fontSize: Font size for module text.
+* fontFamily: Font family for module text.
+* showThermometerIcon: Set to true to show the thermometer icon.
+* showDropletIcon: Set to true to show the droplet icon.
+* showTemperatureText: Set to true to show the temperature text.
+* showHumidityText: Set to true to show the humidity text.
+* headerText: The header text to be displayed above the values.
+* updateInterval: Update interval in seconds for fetching sensor data.
+
+
 
