@@ -19,11 +19,6 @@ git clone https://github.com/J0n4e/MMM-DHT22.git
 npm install
 ````
 
-4. Install Dependencies:
-````
-npm install child_process
-````
-
 Configuration
 To use this module, add it to the modules array in the config/config.js file of your MagicMirror installation:
 
