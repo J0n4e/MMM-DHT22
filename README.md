@@ -68,4 +68,11 @@ modules: [
   }
 ]
 ````
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
+Support and Contributions
+If you encounter any issues or have suggestions for improvements, please open an issue on the GitHub repository.
+
+Acknowledgments
+Special thanks to the MagicMirror community and contributors.
