@@ -51,5 +51,26 @@ Configuration Options
 * headerText: The header text to be displayed above the values.
 * updateInterval: Update interval in seconds for fetching sensor data.
 
+Example Configuration
+Here's an example configuration for the MMM-DHT22 module:
 
+````
+modules: [
+  {
+    module: 'MMM-DHT22',
+    position: 'top_right',
+    config: {
+      headerText: 'Local Environment',
+      gpioPin: 6,
+      updateInterval: 120,
+      fontSize: '16px',
+      fontFamily: 'Arial',
+      showThermometerIcon: true,
+      showDropletIcon: true,
+      showTemperatureText: true,
+      showHumidityText: true   
+    }
+  }
+]
+````
 
