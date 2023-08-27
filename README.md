@@ -2,6 +2,14 @@
 
 The MMM-DHT22 module displays temperature and humidity data from a DHT22 sensor on your MagicMirror.
 
+Examples:
+
+![screenshot_01](https://github.com/J0n4e/MMM-DHT22/assets/25276418/0d85cc54-2cb8-4f64-b31f-2e00e5c2e0b5)
+
+![screenshot_02](https://github.com/J0n4e/MMM-DHT22/assets/25276418/9881f059-bf93-4138-94ea-4e267863c68b)
+
+![screenshot_03](https://github.com/J0n4e/MMM-DHT22/assets/25276418/3aada7c4-041d-4a9b-8ed0-98fb95902fb1)
+
 ## Installation
 
 1. Navigate to your MagicMirror's `modules` directory using the terminal:
