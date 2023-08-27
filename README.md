@@ -19,3 +19,15 @@ npm install child_process
 
 Configuration
 To use this module, add it to the modules array in the config/config.js file of your MagicMirror installation:
+
+```shell
+modules: [
+  {
+    module: 'MMM-DHT22',
+    position: 'top_right',
+    config: {
+      // Configuration options here
+    }
+  }
+]
+
