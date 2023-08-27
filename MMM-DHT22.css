@@ -1,0 +1,17 @@
+/* MMM-DHT22.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+/* Your other styles */
+
+.horizontal-line {
+  border: none;
+  border-top: 1px solid grey; /* Set the line color to grey */
+  width: 100%;
+  margin-top: 5px; /* Adjust spacing between header and line */
+}
+
+.MMM-DHT22 header {
+  font-weight: bold;
+  font-size: 7px; /* Adjust header font size */
+  font-family: 'Arial', sans-serif; /* Default font family */
+  margin-bottom: 3px; /* Adjust spacing between header and line */
+}
