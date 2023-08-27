@@ -29,9 +29,19 @@ npm install
 
 4. Install Adafruit DHT Library:
 ````
-   sudo pip3 install -g adafruit-circuitpython-dht
-   sudo apt-get install libgpiod2
+sudo apt-get update
+sudo apt-get install python3-dev python3-pip
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+cd Adafruit_Python_DHT
+sudo python3 setup.py install
 ````
+
+5. Test the Library (Optional):
+````
+cd examples
+python3 AdafruitDHT.py 22 <GPIO_PIN>
+````
+   
 Configuration
 To use this module, add it to the modules array in the config/config.js file of your MagicMirror installation:
 
