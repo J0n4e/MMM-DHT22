@@ -7,6 +7,7 @@
 Version info:
 
 v1.0.0 - Initial release
+
 v1.0.1 - Added option to modify the color of the temperature and humidity icons
        - Added option to modify the header size
 
