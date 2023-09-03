@@ -1,7 +1,7 @@
 Module.register('MMM-DHT22', {
   defaults: {
     gpioPin: 6,
-    fontSize: '16px', // Default font size for all text
+    fontSize: '16px',
     fontFamily: 'Arial',
     showThermometerIcon: true,
     showDropletIcon: true,
@@ -11,10 +11,9 @@ Module.register('MMM-DHT22', {
     updateInterval: 60,
     temperatureIconColor: 'red',
     humidityIconColor: 'blue',
-    temperatureFontSize: '', // Default: empty (inherits fontSize)
-    humidityFontSize: '',    // Default: empty (inherits fontSize)
-    temperatureOffset: 0, // Default temperature offset adjustment
-    humidityOffset: 0,    // Default humidity offset adjustment
+    temperatureFontSize: '',
+    humidityFontSize: '',
+    temperatureUnit: 'C', // Default temperature unit (Celsius)
   },
 
   start: function() {
@@ -30,17 +29,11 @@ Module.register('MMM-DHT22', {
 
   socketNotificationReceived: function(notification, payload) {
     if (notification === 'DHT_DATA') {
-      // Check if humidity reading is valid (between 0% and 100%)
       if (payload.humidity >= 0 && payload.humidity <= 100) {
-        // Apply calibration offsets to the sensor readings
-        const adjustedTemperature = payload.temperature + this.config.temperatureOffset;
-        const adjustedHumidity = payload.humidity + this.config.humidityOffset;
-
-        this.temperature = adjustedTemperature.toFixed(1);
-        this.humidity = adjustedHumidity.toFixed(1);
+        this.temperature = this.convertTemperature(payload.temperature);
+        this.humidity = payload.humidity.toFixed(1);
         this.updateDom();
       } else {
-        // If humidity is outside the valid range, discard the reading
         console.warn('Invalid humidity reading:', payload.humidity);
       }
     }
@@ -50,9 +43,18 @@ Module.register('MMM-DHT22', {
     return ['MMM-DHT22.css'];
   },
 
+  convertTemperature: function(celsiusTemperature) {
+    // Conversion formula from Celsius to Fahrenheit
+    if (this.config.temperatureUnit === 'F') {
+      return (celsiusTemperature * 9/5 + 32).toFixed(1) + ' °F';
+    }
+    return celsiusTemperature.toFixed(1) + ' °C'; // Default to Celsius
+  },
+
   getDom: function() {
     const wrapper = document.createElement('div');
-    wrapper.style.fontSize = this.config.fontSize; // Set the default font size
+    wrapper.style.fontSize = this.config.fontSize;
+    wrapper.style.fontFamily = this.config.fontFamily;
 
     const header = document.createElement('div');
     header.style.fontWeight = 'bold';
@@ -74,8 +76,12 @@ Module.register('MMM-DHT22', {
       thermometerIcon.style.marginRight = '5px';
       temperatureDiv.appendChild(thermometerIcon);
     }
-    temperatureDiv.appendChild(document.createTextNode(`${this.temperature}°C`));
-    
+    temperatureDiv.appendChild(document.createTextNode(this.temperature));
+
+    if (this.config.showTemperatureUnit) {
+      temperatureDiv.appendChild(document.createTextNode(' ' + this.config.temperatureUnit));
+    }
+
     // Set the font size for temperature independently
     if (this.config.temperatureFontSize) {
       temperatureDiv.style.fontSize = this.config.temperatureFontSize;
