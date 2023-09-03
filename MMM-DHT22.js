@@ -36,8 +36,8 @@ Module.register('MMM-DHT22', {
         const adjustedTemperature = payload.temperature + this.config.temperatureOffset;
         const adjustedHumidity = payload.humidity + this.config.humidityOffset;
 
-        this.temperature = adjustedTemperature.toFixed(2);
-        this.humidity = adjustedHumidity.toFixed(2);
+        this.temperature = adjustedTemperature.toFixed(1);
+        this.humidity = adjustedHumidity.toFixed(1);
         this.updateDom();
       } else {
         // If humidity is outside the valid range, discard the reading
