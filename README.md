@@ -2,7 +2,7 @@
 
 | Status  | Version | Date | Maintained? |MagicMirror² Version |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| Working  | 1.0.0  | 27.08.2023  | Yes  | 2.24.0 |
+| Working  | 1.0.1  | 03.09.2023  | Yes  | 2.24.0 |
 
 The MMM-DHT22 module displays temperature and humidity data from a DHT22 sensor on your MagicMirror.
 
