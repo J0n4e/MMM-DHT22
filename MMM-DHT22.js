@@ -1,4 +1,4 @@
-\Module.register('MMM-DHT22', {
+Module.register('MMM-DHT22', {
   defaults: {
     gpioPin: 6,
     fontSize: '16px', // Default font size for all text
@@ -13,6 +13,8 @@
     humidityIconColor: 'blue',
     temperatureFontSize: '', // Default: empty (inherits fontSize)
     humidityFontSize: '',    // Default: empty (inherits fontSize)
+    temperatureOffset: 0, // Default temperature offset adjustment
+    humidityOffset: 0,    // Default humidity offset adjustment
   },
 
   start: function() {
@@ -30,8 +32,12 @@
     if (notification === 'DHT_DATA') {
       // Check if humidity reading is valid (between 0% and 100%)
       if (payload.humidity >= 0 && payload.humidity <= 100) {
-        this.temperature = payload.temperature;
-        this.humidity = payload.humidity;
+        // Apply calibration offsets to the sensor readings
+        const adjustedTemperature = payload.temperature + this.config.temperatureOffset;
+        const adjustedHumidity = payload.humidity + this.config.humidityOffset;
+
+        this.temperature = adjustedTemperature.toFixed(2);
+        this.humidity = adjustedHumidity.toFixed(2);
         this.updateDom();
       } else {
         // If humidity is outside the valid range, discard the reading

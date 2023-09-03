@@ -2,7 +2,7 @@
 
 | Status  | Version | Date | Maintained? |MagicMirror² Version |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| Working  | 1.0.1  | 03.09.2023  | Yes  | 2.24.0 |
+| Working  | 1.0.2  | 03.09.2023  | Yes  | 2.24.0 |
 
 <br>
 The MMM-DHT22 module displays temperature and humidity data from a DHT22 sensor on your MagicMirror. <br>
@@ -77,6 +77,8 @@ Configuration Options
 * temperatureFontSize: set the color for the humidity icon
 * temperatureFontSize: set the size for the temperature icon
 * humidityFontSize: set the size for the humidity icon
+* temperatureOffset: calibrate the temperature reading
+* humidityOffset: calibrate the humidity reading
 
 Example Configuration
 Here's an example configuration for the MMM-DHT22 module:
@@ -100,6 +102,8 @@ modules: [
     humidityIconColor: 'blue', // Color of the humidity icon
     temperatureFontSize: '18px', // Font size for temperature
     humidityFontSize: '14px', // Font size for humidity
+	temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
+    humidityOffset: 0,    // Humidity offset adjustment in percentage points
     }
   }
 ]
@@ -110,6 +114,8 @@ Version info:
 v1.0.0 - Initial release <br>
 v1.0.1 - Added option to modify the color of the temperature and humidity icons <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to modify the header size
+v1.0.2 - Fix the error readings from sensor <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to calibrate the sensor readings
 
 License:
 
