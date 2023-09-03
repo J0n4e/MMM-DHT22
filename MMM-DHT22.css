@@ -4,14 +4,22 @@
 
 .horizontal-line {
   border: none;
-  border-top: 1px solid grey; /* Set the line color to grey */
+  border-top: 1px solid grey;
   width: 100%;
-  margin-top: 5px; /* Adjust spacing between header and line */
+  margin-top: 5px;
 }
 
 .MMM-DHT22 header {
-  font-weight: bold;
-  font-size: 7px; /* Adjust header font size */
-  font-family: 'Arial', sans-serif; /* Default font family */
-  margin-bottom: 3px; /* Adjust spacing between header and line */
+  font-weight: normal;
+  font-size: 14px;
+  margin-bottom: 3px;
+  font-family: Arial, sans-serif; /* Set the font family to Arial */
+}
+
+.fa-thermometer-half {
+  /* The color is set dynamically in MMM-DHT22.js */
+}
+
+.fa-tint {
+  /* The color is set dynamically in MMM-DHT22.js */
 }
