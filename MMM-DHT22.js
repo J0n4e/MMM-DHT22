@@ -82,7 +82,7 @@ Module.register('MMM-DHT22', {
       dropletIcon.style.marginRight = '5px';
       humidityDiv.appendChild(dropletIcon);
     }
-    humidityDiv.appendChild(document.createTextNode(`${this.humidity}%`));
+    humidityDiv.appendChild(document.createTextNode(`${this.humidity} %`));
 
     // Set the font size for humidity independently
     if (this.config.humidityFontSize) {
