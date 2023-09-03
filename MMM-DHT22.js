@@ -14,6 +14,8 @@ Module.register('MMM-DHT22', {
     temperatureFontSize: '',
     humidityFontSize: '',
     temperatureUnit: 'C', // Default temperature unit (Celsius)
+    temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
+    humidityOffset: 0,    // Humidity offset adjustment in percentage points
   },
 
   start: function() {
@@ -30,8 +32,12 @@ Module.register('MMM-DHT22', {
   socketNotificationReceived: function(notification, payload) {
     if (notification === 'DHT_DATA') {
       if (payload.humidity >= 0 && payload.humidity <= 100) {
-        this.temperature = this.convertTemperature(payload.temperature);
-        this.humidity = payload.humidity.toFixed(1);
+        // Apply calibration offsets to the sensor readings
+        const adjustedTemperature = payload.temperature + this.config.temperatureOffset;
+        const adjustedHumidity = payload.humidity + this.config.humidityOffset;
+
+        this.temperature = adjustedTemperature.toFixed(2);
+        this.humidity = adjustedHumidity.toFixed(1); // Adjusted to one decimal place
         this.updateDom();
       } else {
         console.warn('Invalid humidity reading:', payload.humidity);
