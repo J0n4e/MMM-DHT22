@@ -11,6 +11,7 @@ Version info:
          - Added option to modify the header size
 
 
+
 The MMM-DHT22 module displays temperature and humidity data from a DHT22 sensor on your MagicMirror.
 
 Examples:
