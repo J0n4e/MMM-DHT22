@@ -4,12 +4,6 @@
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | Working  | 1.0.1  | 03.09.2023  | Yes  | 2.24.0 |
 
-Version info:
- 
-v1.0.0 - Initial release <br>
-v1.0.1 - Added option to modify the color of the temperature and humidity icons <br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to modify the header size
-
 <br>
 The MMM-DHT22 module displays temperature and humidity data from a DHT22 sensor on your MagicMirror. <br>
 <br>
@@ -110,6 +104,12 @@ modules: [
   }
 ]
 ````
+
+Version info:
+ 
+v1.0.0 - Initial release <br>
+v1.0.1 - Added option to modify the color of the temperature and humidity icons <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to modify the header size
 
 License:
 
