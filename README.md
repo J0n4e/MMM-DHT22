@@ -8,7 +8,7 @@ The MMM-DHT22 module displays temperature and humidity data from a DHT22 sensor 
 
 Examples:
 
-![screenshot_01](https://github.com/J0n4e/MMM-DHT22/assets/25276418/0d85cc54-2cb8-4f64-b31f-2e00e5c2e0b5)
+![screenshot_01](https://github.com/J0n4e/MMM-DHT22/assets/25276418/7f2910a6-0da9-4b86-945a-fbe4c0fef288)
 
 ![screenshot_02](https://github.com/J0n4e/MMM-DHT22/assets/25276418/9881f059-bf93-4138-94ea-4e267863c68b)
 
