@@ -64,7 +64,7 @@ modules: [
 
 Configuration Options
 * gpioPin: GPIO pin number for the DHT22 sensor.
-* fontSize: Font size for module text.
+* fontSize: Font size for the header.
 * fontFamily: Font family for module text.
 * showThermometerIcon: Set to true to show the thermometer icon.
 * showDropletIcon: Set to true to show the droplet icon.
