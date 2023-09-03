@@ -7,15 +7,16 @@ Module.register('MMM-DHT22', {
     showDropletIcon: true,
     showTemperatureText: true,
     showHumidityText: true,
-    headerText: 'Local Temperature',
+    headerText: 'Local Environment',
     updateInterval: 60,
     temperatureIconColor: 'red',
     humidityIconColor: 'blue',
     temperatureFontSize: '',
     humidityFontSize: '',
     temperatureUnit: 'C', // Default temperature unit (Celsius)
-    temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
-    humidityOffset: 0,    // Humidity offset adjustment in percentage points
+    humidityUnit: ' %',   // Default humidity unit
+    temperatureOffset: 0, // Default temperature offset adjustment
+    humidityOffset: 0,    // Default humidity offset adjustment
   },
 
   start: function() {
@@ -32,12 +33,12 @@ Module.register('MMM-DHT22', {
   socketNotificationReceived: function(notification, payload) {
     if (notification === 'DHT_DATA') {
       if (payload.humidity >= 0 && payload.humidity <= 100) {
-        // Apply calibration offsets to the sensor readings
-        const adjustedTemperature = payload.temperature + this.config.temperatureOffset;
-        const adjustedHumidity = payload.humidity + this.config.humidityOffset;
-
-        this.temperature = adjustedTemperature.toFixed(2);
-        this.humidity = adjustedHumidity.toFixed(1); // Adjusted to one decimal place
+        let temperature = payload.temperature + this.config.temperatureOffset;
+        temperature = this.convertTemperature(temperature);
+        let humidity = payload.humidity + this.config.humidityOffset;
+        
+        this.temperature = temperature;
+        this.humidity = humidity.toFixed(1) + this.config.humidityUnit;
         this.updateDom();
       } else {
         console.warn('Invalid humidity reading:', payload.humidity);
@@ -52,9 +53,9 @@ Module.register('MMM-DHT22', {
   convertTemperature: function(celsiusTemperature) {
     // Conversion formula from Celsius to Fahrenheit
     if (this.config.temperatureUnit === 'F') {
-      return (celsiusTemperature * 9/5 + 32).toFixed(1) + ' °F';
+      return ((celsiusTemperature * 9/5 + 32).toFixed(1) + ' °F');
     }
-    return celsiusTemperature.toFixed(1) + ' °C'; // Default to Celsius
+    return (celsiusTemperature.toFixed(1) + ' °C'); // Default to Celsius
   },
 
   getDom: function() {
@@ -106,7 +107,7 @@ Module.register('MMM-DHT22', {
       dropletIcon.style.marginRight = '5px';
       humidityDiv.appendChild(dropletIcon);
     }
-    humidityDiv.appendChild(document.createTextNode(`${this.humidity} %`));
+    humidityDiv.appendChild(document.createTextNode(this.humidity));
 
     // Set the font size for humidity independently
     if (this.config.humidityFontSize) {
