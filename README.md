@@ -79,6 +79,7 @@ Configuration Options
 * humidityFontSize: set the size for the humidity icon
 * temperatureOffset: calibrate the temperature reading
 * humidityOffset: calibrate the humidity reading
+* temperatureUnit: channge the units Celsius of Fahrenheit
 
 Example Configuration
 Here's an example configuration for the MMM-DHT22 module:
@@ -104,6 +105,7 @@ modules: [
     humidityFontSize: '14px', // Font size for humidity
 	temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
     humidityOffset: 0,    // Humidity offset adjustment in percentage points
+	temperatureUnit: 'F', // Default to Celsius ('C') or use 'F' for Fahrenheit
     }
   }
 ]
@@ -116,6 +118,7 @@ v1.0.1 - Added option to modify the color of the temperature and humidity icons 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to modify the header size
 v1.0.2 - Fix the error readings from sensor <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to calibrate the sensor readings
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to change units: C of F
 
 License:
 
