@@ -72,6 +72,10 @@ Configuration Options
 * showHumidityText: Set to true to show the humidity text.
 * headerText: The header text to be displayed above the values.
 * updateInterval: Update interval in seconds for fetching sensor data.
+* temperatureIconColor: set the color for the temperature icon
+* temperatureFontSize: set the color for the humidity icon
+* temperatureFontSize: set the size for the temperature icon
+* humidityFontSize: set the size for the humidity icon
 
 Example Configuration
 Here's an example configuration for the MMM-DHT22 module:
@@ -82,15 +86,19 @@ modules: [
     module: 'MMM-DHT22',
     position: 'top_right',
     config: {
-      headerText: 'Local Environment',
-      gpioPin: 6,
-      updateInterval: 120,
-      fontSize: '16px',
-      fontFamily: 'Arial',
-      showThermometerIcon: true,
-      showDropletIcon: true,
-      showTemperatureText: true,
-      showHumidityText: true   
+    gpioPin: 6, // GPIO pin number where the DHT22 sensor is connected
+    fontSize: '16px', // Font size for the header
+    fontFamily: 'Arial', // Font family for module text
+    showThermometerIcon: true, // Show the thermometer icon
+    showDropletIcon: true, // Show the droplet icon
+    showTemperatureText: true, // Show the "Temperature" text
+    showHumidityText: true, // Show the "Humidity" text
+    headerText: 'Local Environment', // Header text displayed above the values
+    updateInterval: 120, // Update interval in seconds for fetching sensor data
+    temperatureIconColor: 'red', // Color of the temperature icon
+    humidityIconColor: 'blue', // Color of the humidity icon
+    temperatureFontSize: '18px', // Font size for temperature
+    humidityFontSize: '14px', // Font size for humidity
     }
   }
 ]
