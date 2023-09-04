@@ -115,7 +115,7 @@ Version info:
  
 v1.0.0 - Initial release <br>
 v1.0.1 - Added option to modify the color of the temperature and humidity icons <br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to modify the header size
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to modify the header size <br>
 v1.0.2 - Fix the error readings from sensor <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to calibrate the sensor readings <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to change units: C or F
