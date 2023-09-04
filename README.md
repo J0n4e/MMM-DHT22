@@ -103,9 +103,9 @@ modules: [
     humidityIconColor: 'blue', // Color of the humidity icon
     temperatureFontSize: '18px', // Font size for temperature
     humidityFontSize: '14px', // Font size for humidity
-	temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
+    temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
     humidityOffset: 0,    // Humidity offset adjustment in percentage points
-	temperatureUnit: 'F', // Default to Celsius ('C') or use 'F' for Fahrenheit
+    temperatureUnit: 'F', // Default to Celsius ('C') or use 'F' for Fahrenheit
     }
   }
 ]
@@ -117,7 +117,7 @@ v1.0.0 - Initial release <br>
 v1.0.1 - Added option to modify the color of the temperature and humidity icons <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to modify the header size
 v1.0.2 - Fix the error readings from sensor <br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to calibrate the sensor readings
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to calibrate the sensor readings <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to change units: C or F
 
 License:
