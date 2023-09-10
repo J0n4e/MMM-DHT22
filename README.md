@@ -2,7 +2,7 @@
 
 | Status  | Version | Date | Maintained? |MagicMirror² Version |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| Working  | 1.0.2  | 04.09.2023  | Yes  | 2.24.0 |
+| Working  | 1.0.3  | 10.09.2023  | Yes  | 2.24.0 |
 
 <br>
 The MMM-DHT22 module displays temperature and humidity data from a DHT22 sensor on your MagicMirror. <br>
@@ -80,6 +80,7 @@ Configuration Options
 * temperatureOffset: calibrate the temperature reading
 * humidityOffset: calibrate the humidity reading
 * temperatureUnit: channge the units Celsius of Fahrenheit
+* layout: Default layout style ('horizontal' or 'vertical')
 
 Example Configuration
 Here's an example configuration for the MMM-DHT22 module:
@@ -106,6 +107,7 @@ modules: [
     temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
     humidityOffset: 0,    // Humidity offset adjustment in percentage points
     temperatureUnit: 'F', // Default to Celsius ('C') or use 'F' for Fahrenheit
+	layout: 'horizontal', // Default layout style ('horizontal' or 'vertical')
     }
   }
 ]
@@ -119,6 +121,9 @@ v1.0.1 - Added option to modify the color of the temperature and humidity icons 
 v1.0.2 - Fix the error readings from sensor <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to calibrate the sensor readings <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to change units: C or F
+v1.0.3 - added default layout style ('horizontal' or 'vertical') <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -  <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - 
 
 License:
 

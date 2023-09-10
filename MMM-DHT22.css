@@ -2,6 +2,24 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 /* Your other styles */
 
+/* Styles for horizontal layout */
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically in the container */
+}
+
+.horizontal-container .fa {
+  margin-right: 10px; /* Add spacing between icon and data */
+}
+
+/* Styles for vertical layout */
+.vertical-data {
+  display: block;
+  margin: 5px 0; /* Add spacing between vertical data elements */
+}
+
 .horizontal-line {
   border: none;
   border-top: 1px solid grey;
