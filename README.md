@@ -11,6 +11,8 @@ Examples:
 
 ![screenshot_01](https://github.com/J0n4e/MMM-DHT22/assets/25276418/7f2910a6-0da9-4b86-945a-fbe4c0fef288)
 
+![Screenshot](https://github.com/J0n4e/MMM-DHT22/assets/25276418/4989c59c-f15c-4408-88eb-bf70984a7244)
+
 ![screenshot_02](https://github.com/J0n4e/MMM-DHT22/assets/25276418/9881f059-bf93-4138-94ea-4e267863c68b)
 
 ![screenshot_03](https://github.com/J0n4e/MMM-DHT22/assets/25276418/3aada7c4-041d-4a9b-8ed0-98fb95902fb1)
