@@ -122,8 +122,6 @@ v1.0.2 - Fix the error readings from sensor <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to calibrate the sensor readings <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Added option to change units: C or F
 v1.0.3 - added default layout style ('horizontal' or 'vertical') <br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -  <br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - 
 
 License:
 
