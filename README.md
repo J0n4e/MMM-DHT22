@@ -109,7 +109,7 @@ modules: [
     temperatureOffset: 0, // Temperature offset adjustment in degrees Celsius
     humidityOffset: 0,    // Humidity offset adjustment in percentage points
     temperatureUnit: 'F', // Default to Celsius ('C') or use 'F' for Fahrenheit
-	layout: 'horizontal', // Default layout style ('horizontal' or 'vertical')
+    layout: 'horizontal', // Default layout style ('horizontal' or 'vertical')
     }
   }
 ]
