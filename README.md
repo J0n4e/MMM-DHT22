@@ -31,6 +31,7 @@ git clone https://github.com/J0n4e/MMM-DHT22.git
 
 3. Install required dependencies:
 ````
+cd MMM-DHT22
 npm install
 ````
 
