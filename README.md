@@ -37,6 +37,7 @@ npm install
 
 4. Install Adafruit DHT Library:
 ````
+cd ~
 sudo apt-get update
 sudo apt-get install python3-dev python3-pip
 git clone https://github.com/adafruit/Adafruit_Python_DHT.git
