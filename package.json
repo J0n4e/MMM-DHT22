@@ -1,0 +1,24 @@
+{
+  "name": "mmm-dht22",
+  "version": "1.0.3",
+  "description": "A module for MagicMirror² to display temperature and humidity data from a DHT22 sensor.",
+  "main": "MMM-DHT22.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J0n4e/MMM-DHT22.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "DHT22",
+    "sensor"
+  ],
+  "author": "J0n4e",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/J0n4e/MMM-DHT22/issues"
+  },
+  "homepage": "https://github.com/J0n4e/MMM-DHT22#readme"
+}

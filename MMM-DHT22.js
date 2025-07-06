@@ -20,7 +20,7 @@ Module.register('MMM-DHT22', {
     layout: 'horizontal', // Default layout style ('horizontal' or 'vertical')
   },
 
-  start: function() {
+  start () {
     this.temperature = '';
     this.humidity = '';
     this.sendSocketNotification('START_DHT_READING', { gpioPin: this.config.gpioPin });
@@ -31,35 +31,35 @@ Module.register('MMM-DHT22', {
     }, updateIntervalMillis);
   },
 
-  socketNotificationReceived: function(notification, payload) {
+  socketNotificationReceived (notification, payload) {
     if (notification === 'DHT_DATA') {
       if (payload.humidity >= 0 && payload.humidity <= 100) {
         let temperature = payload.temperature + this.config.temperatureOffset;
         temperature = this.convertTemperature(temperature);
-        let humidity = payload.humidity + this.config.humidityOffset;
+        const humidity = payload.humidity + this.config.humidityOffset;
 
         this.temperature = temperature;
         this.humidity = humidity.toFixed(1) + this.config.humidityUnit;
         this.updateDom();
       } else {
-        console.warn('Invalid humidity reading:', payload.humidity);
+        Log.warn('Invalid humidity reading:', payload.humidity);
       }
     }
   },
 
-  getStyles: function () {
+  getStyles () {
     return ['MMM-DHT22.css'];
   },
 
-  convertTemperature: function(celsiusTemperature) {
+  convertTemperature (celsiusTemperature) {
     // Conversion formula from Celsius to Fahrenheit
     if (this.config.temperatureUnit === 'F') {
-      return ((celsiusTemperature * 9/5 + 32).toFixed(1) + ' °F');
+      return `${(celsiusTemperature * 9 / 5 + 32).toFixed(1)} °F`;
     }
-    return (celsiusTemperature.toFixed(1) + ' °C'); // Default to Celsius
+    return `${celsiusTemperature.toFixed(1)} °C`; // Default to Celsius
   },
 
-  getDom: function() {
+  getDom () {
     const wrapper = document.createElement('div');
     wrapper.style.fontSize = this.config.fontSize;
     wrapper.style.fontFamily = this.config.fontFamily;
@@ -92,7 +92,7 @@ Module.register('MMM-DHT22', {
       temperatureDiv.appendChild(document.createTextNode(this.temperature));
 
       if (this.config.showTemperatureUnit) {
-        temperatureDiv.appendChild(document.createTextNode(' ' + this.config.temperatureUnit));
+        temperatureDiv.appendChild(document.createTextNode(` ${this.config.temperatureUnit}`));
       }
 
       // Set the font size for temperature independently
